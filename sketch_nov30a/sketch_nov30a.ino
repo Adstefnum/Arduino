@@ -16,7 +16,7 @@ void setup() {
 }
 
 void loop() {
-  int16_t rawValue = ads.readADC_Differential_0_1(); // Read A0 - A1
+  int16_t rawValue = ads.readADC_SingleEnded(0);
   Serial.print(rawValue);
   float voltage = rawValue * 0.125 / 1000.0; // Convert to voltage (in volts)
 
@@ -24,5 +24,5 @@ void loop() {
   Serial.print(voltage, 4); // Print with 4 decimal places
   Serial.println(" V");
   
-  delay(10000); // Delay 1 second
+  delay(10000);
 }
