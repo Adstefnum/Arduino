@@ -35,8 +35,7 @@ void loop() {
   Serial.print(voltageDifference);
   Serial.println(" V");
 
-  // if (voltageDifference >= voltageThreshold && !isVibrating) {
-    if(true){
+  if (voltageDifference >= voltageThreshold && !isVibrating) {
     Serial.println("Should vibrate");
     isVibrating = true;
     vibrationStartTime = millis();
